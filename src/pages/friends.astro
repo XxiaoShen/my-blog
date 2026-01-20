@@ -4,140 +4,54 @@ import MainGridLayout from '../layouts/MainGridLayout.astro';
 // 👇 友链数据列表
 const items = [
   {
-    title: '陈错错',
-    imgurl: 'https://q1.qlogo.cn/g?b=qq&nk=123456&s=640', // 记得替换真实头像
-    desc: '大二社畜学生',
-    siteurl: 'https://chencuocuo.com',
-    tags: ['学生'],
+    title: '阿Lam',
+    imgurl: 'http://47.107.67.111/',
+    desc: '大三社畜学生',
+    siteurl: 'http://47.107.67.111/',
   },
   {
     title: 'ZeroQing的个人博客',
-    imgurl: 'https://cravatar.cn/avatar/email_hash', // 记得替换真实头像
+    imgurl: 'https://cravatar.cn/avatar/email_hash',
     desc: '一目洞察网中险，一策化解千般难。',
     siteurl: 'https://zeroqing.com',
-    tags: ['技术'],
   },
   {
     title: '阿涛',
     imgurl: 'https://ui-avatars.com/api/?name=At&background=random',
     desc: '欢迎交换友链！',
     siteurl: 'https://www.xllog.top',
-    tags: ['站长'],
   },
 ];
-
-// 本站友链信息
-const mySite = {
-  title: '小林の小破站',
-  desc: 'Docker技术分享 | 学习笔记 | 个人博客',
-  url: 'https://www.xllog.top/',
-  avatar: 'my-blog/src/assets
-/images/demo-avatar.png',
-  tags: ['Docker', '技术', '博客']
-};
 ---
 
 <MainGridLayout title="友链" description="我的朋友们">
   <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-    <div class="card-base z-10 px-9 py-6 relative w-full ">
+    <div class="card-base z-10 px-9 py-6 relative w-full">
       
-      <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-4">👥 友链</h1>
-      <p class="mb-8 text-neutral-500">排名不分先后，刷新页面可随机重排。欢迎互换友链！</p>
-
-      <!-- 友链申请规则 -->
-      <div class="mb-10 p-6 rounded-xl border border-amber-200 dark:border-amber-800 bg-gradient-to-r from-amber-50/80 to-orange-50/80 dark:from-amber-950/30 dark:to-orange-950/30">
-        <h2 class="text-xl font-bold text-amber-800 dark:text-amber-300 mb-4 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-          </svg>
-          友链申请规则
-        </h2>
-        <div class="space-y-3 text-amber-700 dark:text-amber-400">
-          <p>欢迎大佬们添加友链，目前有以下几个要求：</p>
-          <ul class="list-disc pl-5 space-y-2">
-            <li>您的站点在大陆地区需能正常访问，同时能维持站点的稳定运行。</li>
-            <li>您的网站需要有可读的内容，不接受空壳网站的友链。</li>
-            <li>如站点有头像，请保证图片能长期稳定地打开。</li>
-            <li>您的站点需要保持本站的友链。</li>
-            <li>您的站点不可含有违规的内容。</li>
-          </ul>
-          <p class="pt-2">
-            符合要求后，可通过 <a href="mailto:你的邮箱@example.com" class="underline hover:text-amber-600 dark:hover:text-amber-300">邮件</a> 或页面留言联系我！
-          </p>
-        </div>
-      </div>
-
-      <!-- 本站友链信息 -->
-      <div class="mb-10 p-6 rounded-xl border border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50/80 to-cyan-50/80 dark:from-blue-950/30 dark:to-cyan-950/30">
-        <h2 class="text-xl font-bold text-blue-800 dark:text-blue-300 mb-4 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-          本站友链信息
-        </h2>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <img 
-            src={mySite.avatar} 
-            alt={mySite.title} 
-            class="w-16 h-16 rounded-full border-2 border-white dark:border-gray-800 shadow"
-          />
-          <div class="flex-1">
-            <div class="font-bold text-lg text-blue-900 dark:text-blue-200 mb-1">{mySite.title}</div>
-            <p class="text-blue-700 dark:text-blue-400 mb-2">{mySite.desc}</p>
-            <div class="flex flex-wrap gap-2 mb-3">
-              {mySite.tags.map(tag => (
-                <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300">{tag}</span>
-              ))}
-            </div>
-            <div class="flex items-center text-sm">
-              <span class="text-blue-600 dark:text-blue-400 font-medium mr-2">站点地址：</span>
-              <code class="px-2 py-1 bg-blue-100 dark:bg-blue-900 rounded text-blue-800 dark:text-blue-300 break-all">
-                {mySite.url}
-              </code>
-              <button 
-                onclick="navigator.clipboard.writeText('https://www.xllog.top/')" 
-                class="ml-2 px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 active:scale-95 transition"
-              >
-                复制
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- 友链列表标题 -->
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-black/90 dark:text-white/90">我的朋友们</h2>
-        <span class="text-sm text-neutral-500">
-          共 <span class="font-bold text-blue-600 dark:text-blue-400">{items.length}</span> 位朋友
-        </span>
-      </div>
+      <h1 class="text-3xl font-bold text-black/90 dark:text-white/90 mb-6">友链</h1>
+      <p class="mb-6 text-neutral-500">排名不分先后，欢迎交换友链。</p>
 
       <!-- 友链列表 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 my-4" id="friends-list">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 my-4">
         {items.map((item) => (
-          <div class="friend-card flex flex-nowrap items-stretch h-28 gap-4 rounded-[var(--radius-large)] group hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-blue-900/20 transition-all duration-300 hover:-translate-y-0.5">
-            <div class="w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700">
-              <img src={item.imgurl} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="friend-card flex items-stretch h-28 gap-4 rounded-[var(--radius-large)]">
+            <!-- 头像 -->
+            <div class="w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-200 dark:bg-zinc-900">
+              <img src={item.imgurl} alt={item.title} class="w-full h-full object-cover" />
             </div>
+            
+            <!-- 信息 -->
             <div class="grow w-full flex flex-col justify-between py-1">
               <div>
-                <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                  {item.title}
-                </div>
-                <div class="text-neutral-500 text-sm font-medium line-clamp-2">{item.desc}</div>
-              </div>
-              <!-- 标签展示 -->
-              <div class="flex gap-2 mt-2">
-                 {item.tags?.map(tag => (
-                     <span class="text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 px-2 py-0.5 rounded-md">{tag}</span>
-                 ))}
+                <div class="font-bold text-lg text-neutral-900 dark:text-neutral-100 mb-1">{item.title}</div>
+                <div class="text-neutral-500 text-sm line-clamp-2">{item.desc}</div>
               </div>
             </div>
             
             <!-- 跳转按钮 -->
-            <a href={item.siteurl} target="_blank" rel="noopener noreferrer" class="flex btn-regular w-[3.25rem] h-full items-center justify-center rounded-lg bg-[var(--enter-btn-bg)] hover:bg-[var(--enter-btn-bg-hover)] active:bg-[var(--enter-btn-bg-active)] active:scale-95 transition-all group-hover:bg-blue-500">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="transition text-[var(--primary)] group-hover:text-white text-3xl" width="1em" height="1em" viewBox="0 0 24 24">
+            <a href={item.siteurl} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 rounded-lg bg-[var(--enter-btn-bg)] hover:bg-[var(--enter-btn-bg-hover)]">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="text-[var(--primary)] text-2xl" width="1em" height="1em" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"></path>
               </svg>
             </a>
@@ -145,67 +59,41 @@ const mySite = {
         ))}
       </div>
 
-      <!-- 空状态提示（如果没有友链时显示） -->
-      {items.length === 0 && (
-        <div class="text-center py-12">
-          <div class="text-5xl mb-4">🤝</div>
-          <h3 class="text-xl font-bold text-neutral-700 dark:text-neutral-300 mb-2">还没有友链呢</h3>
-          <p class="text-neutral-500 mb-6">成为第一个交换友链的朋友吧！</p>
-          <button 
-            onclick="document.querySelector('#comments')?.scrollIntoView({ behavior: 'smooth' })"
-            class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 active:scale-95 transition"
-          >
-            立即申请
-          </button>
-        </div>
-      )}
+      <!-- 分隔线 -->
+      <hr class="my-8 border-t border-neutral-200 dark:border-neutral-800" />
 
-      <!-- 评论区占位 -->
-      <div id="comments" class="mt-8 pt-8 border-t border-neutral-200 dark:border-neutral-800">
-        <h3 class="text-xl font-bold mb-4">💬 友链申请留言</h3>
-        <p class="text-neutral-500 mb-6">请在此留言申请友链，我会尽快回复！</p>
-        <div class="p-6 border border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg text-center">
-          <div class="text-4xl mb-2">📝</div>
-          <p class="text-neutral-500">评论区加载中...</p>
-          <p class="text-sm text-neutral-400 mt-2">如果长时间未加载，请检查是否安装了评论插件</p>
+      <!-- 友链申请规则 -->
+      <div class="mb-8">
+        <h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4">友链申请规则</h2>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+          欢迎大佬们添加友链，目前有以下几个要求：
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-neutral-600 dark:text-neutral-400">
+          <li>您的站点在大陆地区需能正常访问，同时能维持站点的稳定运行。</li>
+          <li>您的网站需要有可读的内容，不接受空壳网站的友链。</li>
+          <li>如站点有头像，请保证图片能长期稳定地打开。</li>
+          <li>您的站点需要保持本站的友链。</li>
+          <li>您的站点不可含有违规的内容。</li>
+        </ul>
+      </div>
+
+      <!-- 本站友链信息 -->
+      <div>
+        <h2 class="text-xl font-bold text-black/90 dark:text-white/90 mb-4">本站友链信息</h2>
+        <div class="flex items-center gap-4 p-4 rounded-lg bg-neutral-100 dark:bg-neutral-900">
+          <img 
+            src="https://www.xllog.top/favicon.ico" 
+            alt="小林の小破站"
+            class="w-16 h-16 rounded-lg"
+          />
+          <div>
+            <div class="font-bold text-lg">小林の小破站</div>
+            <div class="text-neutral-600 dark:text-neutral-400 mb-1">Docker技术分享</div>
+            <div class="text-sm text-neutral-500">https://www.xllog.top/</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
-
-  <!-- 随机排列脚本 -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const container = document.getElementById('friends-list');
-        if (!container) return;
-        
-        const cards = Array.from(container.children);
-        if (cards.length === 0) return;
-
-        // 洗牌算法
-        for (let i = cards.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [cards[i], cards[j]] = [cards[j], cards[i]];
-        }
-        
-        // 重新插入
-        cards.forEach(card => container.appendChild(card));
-        
-        // 添加复制功能
-        const copyButtons = document.querySelectorAll('button[onclick*="clipboard"]');
-        copyButtons.forEach(btn => {
-          btn.addEventListener('click', function() {
-            const originalText = this.textContent;
-            this.textContent = '已复制！';
-            this.classList.add('bg-green-500', 'hover:bg-green-600');
-            
-            setTimeout(() => {
-              this.textContent = originalText;
-              this.classList.remove('bg-green-500', 'hover:bg-green-600');
-              this.classList.add('bg-blue-500', 'hover:bg-blue-600');
-            }, 2000);
-          });
-        });
-    });
-  </script>
 </MainGridLayout>
