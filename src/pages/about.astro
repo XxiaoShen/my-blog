@@ -1,18 +1,33 @@
+---
+import MainGridLayout from '../layouts/MainGridLayout.astro';
+
+import { getEntry } from 'astro:content';
+import { i18n } from '../i18n/translation';
+import I18nKey from '../i18n/i18nKey';
+import Markdown from '@components/misc/Markdown.astro';
+
+const aboutPost = await getEntry('spec', 'about');
+
+const { Content } = await aboutPost.render();
+---
 <MainGridLayout title="About" description="About this blog">
-    <!-- 这里是中间的内容区域，把原来的英文全删了，换成下面这几行 -->
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full text-neutral-500/90 gap-4 flex flex-col">
-            
+            <!-- 标题 -->
             <h1 class="text-3xl font-bold text-black/90 dark:text-white/90">介绍</h1>
             
-            <p class="text-lg">
-                欢迎来到小林の小破站！👋
-            </p>
-            <p>
-                本站主要发布一些 <b>Docker</b> 和 <b>Linux</b> 运维知识，<br>
-                偶尔记录一下自己的日常。
-            </p>
+            <!-- 内容 -->
+            <div class="text-lg leading-relaxed">
+                <p class="mb-4">
+                    欢迎来到小林の小破站！👋
+                </p>
+                <p>
+                    本站主要发布一些 <b class="text-primary">Docker</b> 和 <b class="text-primary">Linux</b> 运维知识，<br>
+                    偶尔记录一下自己的日常。
+                </p>
+            </div>
 
+            <!-- 如果你想保留底部的图片版权声明，可以在这里加回来，不想留就不用加 -->
         </div>
     </div>
 </MainGridLayout>
