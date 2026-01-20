@@ -1,46 +1,11 @@
 ---
 import MainGridLayout from '../layouts/MainGridLayout.astro';
----
-<MainGridLayout title="友链" description="我的朋友们">
-    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
-        <div class="card-base z-10 px-9 py-6 relative w-full text-neutral-500/90 gap-4 flex flex-col">
-            <h1 class="text-3xl font-bold text-black/90 dark:text-white/90">友链</h1>
-            <p>欢迎交换友链！请在评论区留言。</p>
-            
-            <!-- 友链列表开始 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                
-                <!-- 第一个朋友 -->
-                <a href="https://example.com" target="_blank" class="block p-4 rounded-lg border border-neutral-200 hover:border-primary transition group">
-                    <div class="font-bold text-lg text-black dark:text-white group-hover:text-primary">大佬的博客</div>
-                    <div class="text-sm mt-1">这是一个很厉害的博客简介...</div>
-                </a>
-
-                <!-- 第二个朋友 (复制上面这一块改改就行) -->
-                <a href="https://google.com" target="_blank" class="block p-4 rounded-lg border border-neutral-200 hover:border-primary transition group">
-                    <div class="font-bold text-lg text-black dark:text-white group-hover:text-primary">Google</div>
-                    <div class="text-sm mt-1">不懂就问它</div>
-                </a>
-
-            </div>
-            <!-- 友链列表结束 -->
-
-            <!-- 这里稍后放评论区 -->
-            <div id="comments" class="mt-8"></div>
-        </div>
-    </div>
-</MainGridLayout>
-
-
-
----
-import MainGridLayout from '../layouts/MainGridLayout.astro';
 
 // 👇 朋友列表数据（必须在两个 --- 中间）
 const friends = [
     {
         name: "阿Lam的破站",
-        desc: "大二社畜学生",
+        desc: "大三社畜学生",
         url: "http://47.107.67.111/",
         avatar: "https://q1.qlogo.cn/g?b=qq&nk=123456&s=640"
     },
