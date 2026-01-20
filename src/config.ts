@@ -40,17 +40,24 @@ export const siteConfig: SiteConfig = {
 };
 
 export const navBarConfig: NavBarConfig = {
-	links: [
-		LinkPreset.Home,
-		LinkPreset.Archive,
-		LinkPreset.About,
-		{
-			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
-	],
-};
+  links: [
+    LinkPreset.Home,
+    LinkPreset.Archive,
+    LinkPreset.About,
+    // 👇👇👇 在这里添加这一段 👇👇👇
+    {
+      name: '友链',
+      url: '/friends',     // 对应 src/pages/friends.astro
+      external: false,     // false 表示是站内链接
+    },
+    // 👆👆👆 添加结束 👆👆👆
+    {
+      name: 'GitHub',
+      url: 'https://github.com/saicaca/fuwari',
+      external: true,
+    },
+  ],
+}
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
