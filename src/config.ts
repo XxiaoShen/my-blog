@@ -94,9 +94,6 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	theme: "github-dark",
 }
 export const commentConfig: CommentConfig = {
-  disqus: {
-    shortname: '',
-  },
   giscus: {
     repo: 'XxiaoShen/my-blog',
     repoId: 'R_kgDOQ8GNWw',
@@ -110,6 +107,6 @@ export const commentConfig: CommentConfig = {
     theme: 'preferred_color_scheme',
     lang: 'zh-CN',
     loading: 'lazy',
-	crossorigin="anonymous"
+    crossorigin: 'anonymous'  // ✅ 正确：使用冒号
   },
 }
