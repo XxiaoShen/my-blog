@@ -94,6 +94,9 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	theme: "github-dark",
 }
 export const commentConfig: CommentConfig = {
+  disqus: {
+    shortname: '', // 👈 必须保留这个，哪怕是空的
+  },
   giscus: {
     repo: 'XxiaoShen/my-blog',
     repoId: 'R_kgDOQ8GNWw',
@@ -103,10 +106,9 @@ export const commentConfig: CommentConfig = {
     strict: '0',
     reactionsEnabled: '1',
     emitMetadata: '0',
-    inputPosition: 'bottom',
-    theme: 'preferred_color_scheme',
+    inputPosition: 'top', // 建议改回 top，体验更好
+    theme: 'light',       // 建议先用 light 测试，确定能出来再改 preferred_color_scheme
     lang: 'zh-CN',
     loading: 'lazy',
-    crossorigin: 'anonymous'  // ✅ 正确：使用冒号
   },
 }
