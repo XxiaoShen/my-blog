@@ -91,4 +91,23 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
 	// Please select a dark theme, as this blog theme currently only supports dark background color
 	theme: "github-dark",
-};
+}
+export const commentConfig: CommentConfig = {
+  disqus: {
+    shortname: '',
+  },
+  giscus: {
+    repo: 'XxiaoShen/my-blog',
+    repoId: 'R_kgDOQ8GNWw',
+    category: 'General',
+    categoryId: 'DIC_kwDOQ8GNW84C1PDz',
+    mapping: 'pathname',       // 对应你刚才选的映射方式
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'bottom',
+    theme: 'preferred_color_scheme',
+    lang: 'zh-CN',
+	crossorigin="anonymous"
+  },
+}
