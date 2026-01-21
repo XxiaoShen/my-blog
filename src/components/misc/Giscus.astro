@@ -1,0 +1,81 @@
+---
+// 这是一个支持主题切换的 Giscus 评论组件
+---
+
+<div id="giscus-container" class="mt-8"></div>
+
+<script>
+  function loadGiscus() {
+    const container = document.getElementById('giscus-container');
+    if (!container) return;
+
+    // 检测当前主题
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? 'dark' : 'light';
+
+    // 创建脚本元素
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'XxiaoShen/my-blog');
+    script.setAttribute('data-repo-id', 'R_kgDOQ8GNWw');
+    script.setAttribute('data-category', 'Announcements');  // 注意：这里是 Announcements
+    script.setAttribute('data-category-id', 'DIC_kwDOQ8GNW84C1PDy');  // 注意：这里是 PDy
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', theme);
+    script.setAttribute('data-lang', 'zh-CN');
+    script.setAttribute('data-loading', 'lazy');
+    script.crossOrigin = 'anonymous';
+    script.async = true;
+
+    // 清空容器并添加新脚本
+    container.innerHTML = '';
+    container.appendChild(script);
+  }
+
+  // 监听主题变化
+  function updateGiscusTheme() {
+    const giscusFrame = document.querySelector('iframe[src*="giscus"]');
+    if (giscusFrame && giscusFrame.contentWindow) {
+      const isDark = document.documentElement.classList.contains('dark');
+      const theme = isDark ? 'dark' : 'light';
+
+      giscusFrame.contentWindow.postMessage({
+        giscus: {
+          setConfig: {
+            theme: theme
+          }
+        }
+      }, 'https://giscus.app');
+    }
+  }
+
+  // 页面加载时初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGiscus);
+  } else {
+    loadGiscus();
+  }
+
+  // 监听主题切换
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        setTimeout(updateGiscusTheme, 500); // 延迟一点确保主题已切换
+      }
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class']
+  });
+
+  // 页面切换时重新加载（单页应用）
+  window.addEventListener('astro:page-load', () => {
+    setTimeout(loadGiscus, 100);
+  });
+</script>
