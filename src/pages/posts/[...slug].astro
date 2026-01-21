@@ -13,6 +13,7 @@ import ImageWrapper from "../../components/misc/ImageWrapper.astro";
 import PostMetadata from "../../components/PostMeta.astro";
 import { profileConfig, siteConfig } from "../../config";
 import { formatDateToYYYYMMDD } from "../../utils/date-utils";
+import Giscus from '../../components/misc/Giscus.astro';
 
 export async function getStaticPaths() {
 	const blogEntries = await getSortedPosts();
@@ -132,5 +133,17 @@ const jsonLd = {
             </div>}
         </a>
     </div>
-
+<!-- 在文章内容之后添加 -->
+<div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+  <div class="flex items-center gap-2 mb-6">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
+    </svg>
+    <h2 class="text-2xl font-bold">评论</h2>
+  </div>
+  <p class="text-neutral-500 dark:text-neutral-400 mb-6">
+    欢迎留下你的想法、问题或建议！
+  </p>
+  <Giscus />
+</div>
 </MainGridLayout>
