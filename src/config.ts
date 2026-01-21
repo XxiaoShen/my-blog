@@ -51,11 +51,6 @@ export const navBarConfig: NavBarConfig = {
       external: false,     // false 表示是站内链接
     },
     // 👆👆👆 添加结束 👆👆👆
-    {
-      name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',
-      external: true,
-    },
   ],
 }
 
