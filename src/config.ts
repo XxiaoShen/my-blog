@@ -92,22 +92,25 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// Please select a dark theme, as this blog theme currently only supports dark background color
 	theme: "github-dark",
 }
-export const commentConfig: CommentConfig = {
-  disqus: {
-    shortname: '',
-  },
-  giscus: {
-    repo: 'XxiaoShen/my-blog',
-    repoId: 'R_kgDOQ8GNWw',
-    category: 'General',
-    categoryId: 'DIC_kwDOQ8GNW84C1PDz',
-    mapping: 'pathname',       // 对应你刚才选的映射方式
-    strict: '0',
-    reactionsEnabled: '1',
-    emitMetadata: '0',
-    inputPosition: 'bottom',
-    theme: 'preferred_color_scheme',
-    lang: 'zh-CN',
-	crossorigin="anonymous"
-  },
-}
+	
+<!-- 在 </MainGridLayout> 标签前添加 -->
+<div class="mt-10 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+  <h2 class="text-2xl font-bold mb-6">💬 友链申请留言</h2>
+  <div class="giscus"></div>
+</div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="XxiaoShen/my-blog"
+        data-repo-id="R_kgDOQ8GNWw"
+        data-category="General"
+        data-category-id="DIC_kwDOQ8GNW84C1PDz"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
