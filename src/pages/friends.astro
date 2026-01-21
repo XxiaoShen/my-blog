@@ -1,5 +1,6 @@
 ---
 import MainGridLayout from '../layouts/MainGridLayout.astro';
+import Giscus from '../components/misc/Giscus.astro';
 
 // 👇 友链数据列表
 const items = [
@@ -99,7 +100,26 @@ const items = [
     </div>
   </div>
 </div>
+      <!-- 添加评论区域（这里） -->
+      <div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="transition h-8 w-8 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-black/90 dark:text-white/90">友链申请留言</h2>
+        </div>
+        <p class="text-neutral-500 dark:text-neutral-400 mb-6">
+          请在此留言申请友链！我会尽快查看并添加。
+        </p>
+        <div class="onload-animation">
+          <Giscus />
+        </div>
+      </div>
+
 
     </div>
   </div>
+
 </MainGridLayout>
