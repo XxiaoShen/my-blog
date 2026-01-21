@@ -59,23 +59,25 @@ export const profileConfig: ProfileConfig = {
 	name: "小林&小破站",
 	bio: "一个正在焦虑的大三学生....",
 	links: [
-		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
-		{
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
-		},
+    // 1. QQ (用 fa6-brands:qq 图标)
+    {
+      name: 'QQ',
+      icon: 'fa6-brands:qq',       // 👈 QQ 图标 ID
+      url: 'https://wpa.qq.com/msgrd?v=3&uin=482607843&site=qq&menu=yes', // 点击直接跳转QQ聊天
+    },
+    // 2. 微信 (用 fa6-brands:weixin 图标)
+    {
+      name: 'WeChat',
+      icon: 'fa6-brands:weixin',   // 👈 微信 图标 ID
+      // 微信通常不能直接跳转，你可以填你的微信号，或者填一张二维码图片的链接
+      url: 'https://img.cdn1.vip/i/6970bd71706f4_1768996209.webp', 
+    },
+    // 3. 邮箱 (用 material-symbols:mail 图标)
+    {
+      name: 'Mail',
+      icon: 'material-symbols:mail', // 👈 邮箱 图标 ID
+      url: 'mailto:482607843@qq.com',
+    },
 	],
 };
 
