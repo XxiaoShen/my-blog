@@ -13,12 +13,17 @@ const currentYear = new Date().getFullYear();
         &copy; <span id="copyright-year">{currentYear}</span> 小林. All Rights Reserved.
         <br>
         
-        <!-- 第二行：Slogan (替代备案号) -->
+        <!-- 第二行：Slogan -->
         <span class="text-neutral-400 mt-1 block">
             既然选择了远方，便只顾风雨兼程 🚀
         </span>
 
-        <!-- 第三行：链接 -->
+        <!-- 第三行：运行时间 (JS动态计算) -->
+        <div class="text-neutral-400 text-xs mt-2" id="running-time">
+            本站已运行: <span id="days">0</span> 天
+        </div>
+
+        <!-- 第四行：链接 -->
         <div class="flex gap-2 justify-center mt-2">
             <a class="transition link text-[var(--primary)] font-medium" target="_blank" href={url('rss.xml')}>RSS</a>
             <span>/</span>
@@ -26,3 +31,23 @@ const currentYear = new Date().getFullYear();
         </div>
     </div>
 </div>
+
+<!-- 运行时间计算脚本 -->
+<script is:inline>
+    function updateRuntime() {
+        // 👇👇👇 修改这里的日期：你的建站时间 (YYYY-MM-DD) 👇👇👇
+        const startDate = new Date("2024-05-22");
+        // 👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆
+        
+        const now = new Date();
+        const diff = now - startDate;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        
+        const dayElement = document.getElementById("days");
+        if (dayElement) {
+            dayElement.innerText = days;
+        }
+    }
+
+    updateRuntime();
+</script>
